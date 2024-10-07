@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1080933464873",
+    "project_id": "sigmaty-73444",
+    "storage_bucket": "sigmaty-73444.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080933464873:android:344c1f61c6019a4da7d538",
+        "android_client_info": {
+          "package_name": "com.example.sigmaty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_1Ejq5-IzcbbiLouYOoYWd-G70KayFBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
