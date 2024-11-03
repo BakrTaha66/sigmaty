@@ -6,6 +6,8 @@ import 'package:sigmaty/Sigmaty/constants/assets_data.dart';
 import 'package:sigmaty/Sigmaty/constants/colors_asset.dart';
 import 'package:sigmaty/Sigmaty/constants/screen_size.dart';
 import 'package:sigmaty/Sigmaty/presentation/manager/social_auth_cubit/google_sign_in_cubit/google_sign_in_cubit.dart';
+import 'package:sigmaty/Sigmaty/presentation/pages/student/main_teacher_screen/main_student_view.dart';
+import 'package:sigmaty/Sigmaty/presentation/pages/teacher/main_teacher/main_teacher_view.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_button/custom_button.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_button_without_icon/custom_button_without_icon.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_form_field/custom_form_field.dart';
@@ -67,12 +69,12 @@ class _LoginCustomizationState extends State<LoginCustomization> {
       if (user != null && widget.userType == 'student') {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MainStudentViewBody()),
+          MaterialPageRoute(builder: (context) => MainStudentView(user: user,)),
         );
       } else if (user != null && widget.userType == 'teacher') {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MainTeacherViewBody()),
+          MaterialPageRoute(builder: (context) => MainTeacherView(user: user,)),
         );
       } else if (user != null && widget.userType == 'parents') {
         Navigator.push(

@@ -11,6 +11,6 @@ class TeacherDNA extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: (){},
-        child: const CustomizeSubject(imageUrl: AssetsData.psychology, ));
+        child: const CustomizeSubject(imageUrl: AssetsData.psychology, txtSubject: 'علم نفس', txtNumberOfTeacher: '', ));
   }
 }

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:sigmaty/Sigmaty/constants/colors_asset.dart';
 import 'package:sigmaty/Sigmaty/constants/screen_size.dart';
+import 'package:sigmaty/Sigmaty/presentation/pages/student/main_teacher_screen/main_student_view.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_button_without_icon/custom_button_without_icon.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_dropdown_app/custom_dropdown_app.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_form_field/custom_form_field.dart';
@@ -349,7 +350,7 @@ class _LoginCustomizationState extends State<RegisterCustomization> {
                               Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (_) =>
-                                        const MainStudentViewBody()),
+                                        MainStudentView(user: user,)),
                               );
                             }
                           }

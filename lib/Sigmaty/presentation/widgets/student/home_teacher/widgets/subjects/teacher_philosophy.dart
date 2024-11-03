@@ -13,6 +13,6 @@ class TeacherPhilosophy extends StatelessWidget {
       onTap: (){},
         child:  GestureDetector(
             onTap: (){},
-            child: const CustomizeSubject(imageUrl: AssetsData.philosophy,)));
+            child: const CustomizeSubject(imageUrl: AssetsData.philosophy, txtSubject: 'فلسفة', txtNumberOfTeacher: '',)));
   }
 }

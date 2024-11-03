@@ -11,6 +11,6 @@ class TeacherItalic extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: (){},
-        child: const CustomizeSubject(imageUrl: AssetsData.italian,));
+        child: const CustomizeSubject(imageUrl: AssetsData.italian, txtSubject: 'ايطالي', txtNumberOfTeacher: '',));
   }
 }

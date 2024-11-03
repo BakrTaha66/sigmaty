@@ -14,6 +14,6 @@ class TeacherAutism extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: (){},
-        child: const CustomizeSubject(imageUrl: AssetsData.geography,));
+        child: const CustomizeSubject(imageUrl: AssetsData.geography, txtSubject: 'جغرافيا', txtNumberOfTeacher: '',));
   }
 }

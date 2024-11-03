@@ -161,6 +161,7 @@ class CustomizeTeacherProfile extends StatelessWidget {
                               ),
                               Text(
                                 secondaryYear,
+                                overflow: TextOverflow.fade,
                                 style: FontAsset.font12WeightMedium.copyWith(
                                     color: ColorsAsset.secondaryColor,
                                     fontSize: 10),

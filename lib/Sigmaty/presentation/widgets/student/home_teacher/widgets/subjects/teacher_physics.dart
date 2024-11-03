@@ -14,7 +14,7 @@ class TeacherPhysics extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){},
-      child: const CustomizeSubject(imageUrl: AssetsData.physics,),
+      child: const CustomizeSubject(imageUrl: AssetsData.physics, txtSubject: 'فيزياء', txtNumberOfTeacher: '',),
     );
   }
 }

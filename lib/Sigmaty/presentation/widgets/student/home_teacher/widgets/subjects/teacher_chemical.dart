@@ -14,6 +14,6 @@ class TeacherChemical extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: (){},
-        child: const CustomizeSubject(imageUrl: AssetsData.chemistry));
+        child: const CustomizeSubject(imageUrl: AssetsData.chemistry, txtSubject: 'كيمياء', txtNumberOfTeacher: '',));
   }
 }

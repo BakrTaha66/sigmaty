@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
@@ -11,7 +12,8 @@ import '../../../../constants/assets_data.dart';
 import '../../../../constants/colors_asset.dart';
 
 class MainTeacherViewBody extends StatefulWidget {
-  const MainTeacherViewBody({super.key});
+  const MainTeacherViewBody({super.key, required this.user});
+  final User? user;
 
   @override
   State<MainTeacherViewBody> createState() => _MainTeacherViewBodyState();
@@ -28,7 +30,7 @@ class _MainTeacherViewBodyState extends State<MainTeacherViewBody> {
 
   List<PersistentTabConfig> _tabs() => [
         PersistentTabConfig(
-          screen: const PackagesView(),
+          screen: PackagesView(user: widget.user,),
           item: ItemConfig(
             icon: SvgPicture.asset(
               AssetsData.home,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/teacher/notifications_partition/widgets/build_notification_teacher_container.dart';
  import '../../../../constants/font_asset.dart';
+import '../../../../constants/screen_size.dart';
 
 class NotificationsPartitionViewBody extends StatelessWidget {
   const NotificationsPartitionViewBody({super.key});
@@ -25,6 +26,7 @@ class NotificationsPartitionViewBody extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: 5,
+                      itemExtent: ScreenSize.height(context) * 0.55,
                       itemBuilder: (context,index){
                         return BuildNotificationTeacherContainer.buildNotificationContainer(context);
                       })

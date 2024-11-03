@@ -6,6 +6,6 @@ class ParentsHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const StudentHomeViewBody();
+    return const StudentHomeViewBody(user: null,);
   }
 }

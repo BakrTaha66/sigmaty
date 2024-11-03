@@ -12,6 +12,6 @@ class TeacherHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: (){},
-        child: const CustomizeSubject(imageUrl: AssetsData.history,));
+        child: const CustomizeSubject(imageUrl: AssetsData.history, txtSubject: 'تاريخ', txtNumberOfTeacher: '',));
   }
 }

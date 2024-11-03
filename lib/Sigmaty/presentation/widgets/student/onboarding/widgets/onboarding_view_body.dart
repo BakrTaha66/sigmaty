@@ -32,19 +32,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 imagePath: 'assets/images/background_sigmaty.png',
                 title: '',
                 description:
-                    'مع اسهل طرق التعلم وسهولة الاستخدام للوصل الى افضل المدرسيين',
+                    'سيجماتي اكبر و اسهل منصة تعليمية في مصر',
               ),
               OnboardingPage(
                 imagePath: 'assets/images/background_sigmaty.png',
                 title: '',
                 description:
-                    'مع اسهل طرق التعلم وسهولة الاستخدام للوصل الى افضل المدرسيين',
+                    'سيجماتي نظام تعليمي متكامل',
               ),
               OnboardingPage(
                 imagePath: 'assets/images/background_sigmaty.png',
                 title: ' ',
                 description:
-                    'مع اسهل طرق التعلم وسهولة الاستخدام للوصل الى افضل المدرسيين',
+                    'سيجماتي : التعليم بقاله كبير',
               ),
             ],
           ),

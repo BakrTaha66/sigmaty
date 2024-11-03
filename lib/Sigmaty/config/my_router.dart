@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sigmaty/Sigmaty/presentation/pages/chapters_screen/chapters_screen_body.dart';
@@ -8,7 +9,7 @@ import 'package:sigmaty/Sigmaty/presentation/pages/onboarding/features_users_vie
 import 'package:sigmaty/Sigmaty/presentation/pages/onboarding/onboarding_view.dart';
 import 'package:sigmaty/Sigmaty/presentation/pages/onboarding/splash_screen_view.dart';
 import 'package:sigmaty/Sigmaty/presentation/pages/parents/main_parents_screen/main_parent_screen_view.dart';
-import 'package:sigmaty/Sigmaty/presentation/pages/student/main_teacher_screen/main_student_screen_view.dart';
+import 'package:sigmaty/Sigmaty/presentation/pages/student/main_teacher_screen/main_student_view.dart';
 import 'package:sigmaty/Sigmaty/presentation/pages/teacher/main_teacher/main_teacher_view.dart';
 import 'package:sigmaty/Sigmaty/presentation/payment_screen/payment_screen1.dart';
 import 'package:sigmaty/Sigmaty/presentation/payment_screen/payment_screen2.dart';
@@ -43,7 +44,7 @@ class MyRouter {
           GoRoute(
               path: 'MainStudentScreen',
               builder: (BuildContext context, GoRouterState state) =>
-                  MainStudentScreenView()),
+                  MainStudentView()),
           GoRoute(
               path: 'MainParentView',
               builder: (BuildContext context, GoRouterState state) =>
@@ -69,22 +70,6 @@ class MyRouter {
               builder: (BuildContext context, GoRouterState state) =>
                   SearchHomeScreenBody()),
           GoRoute(
-              path: 'TeacherChaptersList',
-              builder: (BuildContext context, GoRouterState state) =>
-                  TeacherChaptersList()),
-          GoRoute(
-              path: 'SessionsScreenBody',
-              builder: (BuildContext context, GoRouterState state) =>
-                  SessionsScreenBody()),
-          GoRoute(
-              path: 'PaymentScreen1',
-              builder: (BuildContext context, GoRouterState state) =>
-                  PaymentScreen1()),
-          GoRoute(
-              path: 'PaymentScreen2',
-              builder: (BuildContext context, GoRouterState state) =>
-                  PaymentScreen2()),
-          GoRoute(
             path: 'HistoryScreen2', 
             builder: (BuildContext context, GoRouterState state) =>
                 const HistoryScreen2(),
@@ -92,7 +77,7 @@ class MyRouter {
           GoRoute(
               path: 'SecondLessonScreenView',
               builder: (BuildContext context, GoRouterState state) =>
-                  SecondLessonScreenView()),
+                  SecondLessonScreenView(user: null,)),
                          GoRoute(
               path: 'LoginView',
               builder: (BuildContext context, GoRouterState state) =>

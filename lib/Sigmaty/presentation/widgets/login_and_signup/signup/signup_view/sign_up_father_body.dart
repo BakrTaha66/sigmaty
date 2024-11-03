@@ -23,12 +23,13 @@ class _LoginViewBodyState extends State<SignUpFatherBody> {
         child: RegisterFatherCustomization(
             emailController: emailController,
             passwordController: passwordController,
-            onPressedForgotPassword: (){},
-            onPressedGoogle: (){},
-            onPressedFacebook: (){},
-            onPressedApple: (){},
-            onPressedLogin: (){},
-            onPressedRegister: (){}),
+            onPressedForgotPassword: () {},
+            onPressedGoogle: () {},
+            onPressedFacebook: () {},
+            onPressedApple: () {},
+            onPressedLogin: () {},
+            onPressedRegister: () {}
+        ),
       ),
     ));
   }

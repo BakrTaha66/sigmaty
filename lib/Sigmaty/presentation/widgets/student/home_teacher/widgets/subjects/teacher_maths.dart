@@ -12,6 +12,6 @@ class TeacherMaths extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: (){},
-        child: const CustomizeSubject(imageUrl: AssetsData.math));
+        child: const CustomizeSubject(imageUrl: AssetsData.math, txtSubject: 'رياضيات', txtNumberOfTeacher: '',));
   }
 }

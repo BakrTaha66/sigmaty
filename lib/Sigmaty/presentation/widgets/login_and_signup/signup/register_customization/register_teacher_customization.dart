@@ -6,12 +6,14 @@ import 'package:sigmaty/Sigmaty/constants/colors_asset.dart';
 import 'package:sigmaty/Sigmaty/constants/screen_size.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_button_without_icon/custom_button_without_icon.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_dropdown_app/custom_dropdown_app.dart';
+import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_dropdown_app/custom_dropdown_multi_app.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_form_field/custom_form_field.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/login_and_signup/login/login_view_body.dart';
 
 import '../../../../../helper/helperfunctions.dart';
 import '../../../../../services/auth.dart';
 import '../../../../../services/database.dart';
+import '../../../../pages/teacher/main_teacher/main_teacher_view.dart';
 import '../../../teacher/main_teacher/main_teacher_view_body.dart';
 
 class RegisterTeacherCustomization extends StatefulWidget {
@@ -54,9 +56,12 @@ class _LoginCustomizationState extends State<RegisterTeacherCustomization> {
   PhoneNumber number = PhoneNumber(isoCode: 'US');
   GlobalKey<FormState> _key = GlobalKey();
 
+  List<String> _selectedYears = [];
+  List<String> _allYears = ["الاول ثانوي", "الثاني ثانوي", "الثالث ثانوي",];
   String department = '';
   String subject = '';
-  String academicYear = '';
+  String status = 'قيد التفعيل';
+
 
   @override
   Widget build(BuildContext context) {
@@ -210,12 +215,13 @@ class _LoginCustomizationState extends State<RegisterTeacherCustomization> {
                     SizedBox(
                       height: 16,
                     ),
-                    CustomDropdownApp(
-                      items: const ["الاول ثانوي", "الثاني ثانوي", "الثالث ثانوي",],
+                    CustomDropdownMultiApp(
+                      items: _allYears,
+                      selectedItems: _selectedYears,
                       hintText: 'السنة الدراسية',
                       onChanged: (value) {
                         setState(() {
-                          academicYear = value!;
+                          _selectedYears = value;
                         });
                       },
                     ),
@@ -281,7 +287,8 @@ class _LoginCustomizationState extends State<RegisterTeacherCustomization> {
                               'phone': phoneController.text,
                               'department': department,
                               'subject': subject,
-                              'academicYear': academicYear,
+                              'academicYear': _selectedYears,
+                              'status': status,
                             };
 
                             HelperFunctions.saveUserEmailSharedPreference( widget.emailController.text);
@@ -297,7 +304,7 @@ class _LoginCustomizationState extends State<RegisterTeacherCustomization> {
                               Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (_) =>
-                                    const MainTeacherViewBody()),
+                                    MainTeacherView(user: user)),
                               );
                             }
                           }

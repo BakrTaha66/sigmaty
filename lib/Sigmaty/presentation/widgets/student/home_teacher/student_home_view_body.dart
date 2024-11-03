@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -19,12 +20,12 @@ import 'package:sigmaty/Sigmaty/presentation/widgets/student/home_teacher/widget
 import 'package:sigmaty/Sigmaty/presentation/widgets/student/home_teacher/widgets/subjects/teacher_physics.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/student/home_teacher/widgets/subjects/teacher_spain.dart';
 
-import 'widgets/best_teacher_image.dart';
 import 'widgets/subjectsItem.dart';
 import 'widgets/teachers_item.dart';
 
 class StudentHomeViewBody extends StatefulWidget {
-  const StudentHomeViewBody({super.key});
+  const StudentHomeViewBody({super.key, required this.user});
+  final User? user;
 
   @override
   State<StudentHomeViewBody> createState() => _StudentHomeViewBodyState();
@@ -35,6 +36,7 @@ class _StudentHomeViewBodyState extends State<StudentHomeViewBody> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
   bool isSubjects = true;
   bool isTeachers = true;
+
   @override
   Widget build(BuildContext context) {
     List subjects = const [
@@ -50,7 +52,8 @@ class _StudentHomeViewBodyState extends State<StudentHomeViewBody> {
       TeacherPhysics(),
       TeacherSpain(),
     ];
-    final pages = List.generate(6, (index) => const BestTeacherImage());
+
+
     return Scaffold(
       body: SafeArea(
         child : Padding(
@@ -178,8 +181,8 @@ class _StudentHomeViewBodyState extends State<StudentHomeViewBody> {
                   height: 16,
                 ),
                 isSubjects == true
-                    ? TeachersItem(pages: pages, controller: controller)
-                    : SubjectsItem(subjects: subjects)
+                    ? TeachersItem(controller: controller, user: widget.user,)
+                    : const SubjectsItem()
               ],
             ),
           ),

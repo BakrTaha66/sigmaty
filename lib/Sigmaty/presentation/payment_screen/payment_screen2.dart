@@ -5,9 +5,22 @@ import 'package:sigmaty/Sigmaty/presentation/widgets/customizations/custom_form_
 
 import '../../constants/screen_size.dart';
 
-class PaymentScreen2 extends StatelessWidget {
-  PaymentScreen2({super.key});
-  final TextEditingController _codecontroller = TextEditingController();
+class PaymentScreen2 extends StatefulWidget {
+  PaymentScreen2({super.key,
+    required this.teacherName,
+    required this.sessionItem,
+    required this.index,
+  });
+  final String teacherName;
+  final List<dynamic> sessionItem;
+  final int index;
+
+  @override
+  State<PaymentScreen2> createState() => _PaymentScreen2State();
+}
+
+class _PaymentScreen2State extends State<PaymentScreen2> {
+  final TextEditingController _codeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +46,23 @@ class PaymentScreen2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "final revisions - session 1: rafsyuggs",
+                '${widget.sessionItem[widget.index]['sessionName']}',
                 style: FontAsset.font16WeightSemiBold,
               ),
               SizedBox(
                 height: 16,
               ),
               Container(
-                  width: ScreenSize.width(context),
-                  child: Image.asset("assets/images/Rectangle 6.png",
-                    fit: BoxFit.fill,)),
+                height: 340,
+                width: ScreenSize.width(context),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: NetworkImage('${widget.sessionItem[widget.index]['image']}'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 16,
               ),
@@ -61,7 +81,7 @@ class PaymentScreen2 extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "الاستاذ : محمد سعد",
+                          'الاستاذ: ${widget.teacherName}',
                           style: FontAsset.font16WeightSemiBold,
                         ),
                         Text(
@@ -79,45 +99,46 @@ class PaymentScreen2 extends StatelessWidget {
               Container(
                 width: double.infinity,
                 color: Colors.grey,
-                height: 0.6, // Line thickness
+                height: 0.6,
+                // Line thickness
               ),
               SizedBox(
                 height: 16,
               ),
               Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          const Icon(Icons.video_library_outlined),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "فيديوهات",
-                            style: FontAsset.font16WeightSemiBold,
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "4",
-                        style: FontAsset.font16WeightSemiBold,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    color: Colors.grey,
-                    height: 0.6, // Line thickness
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Row(
+                  //       children: [
+                  //         const Icon(Icons.video_library_outlined),
+                  //         SizedBox(
+                  //           width: 8,
+                  //         ),
+                  //         Text(
+                  //           "فيديوهات",
+                  //           style: FontAsset.font16WeightSemiBold,
+                  //         ),
+                  //       ],
+                  //     ),
+                  //     Text(
+                  //       "4",
+                  //       style: FontAsset.font16WeightSemiBold,
+                  //     ),
+                  //   ],
+                  // ),
+                  // SizedBox(
+                  //   height: 16,
+                  // ),
+                  // Container(
+                  //   width: double.infinity,
+                  //   color: Colors.grey,
+                  //   height: 0.6, // Line thickness
+                  // ),
+                  // SizedBox(
+                  //   height: 16,
+                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -175,7 +196,7 @@ class PaymentScreen2 extends StatelessWidget {
                   ),
                   CustomFormField(
                       hintText: "ادخل الكود",
-                      controller: _codecontroller,
+                      controller: _codeController,
                       obscureText: false,
                       borderSideColor: Colors.black.withOpacity(0.2),
                       borderRadius: 20.0,
@@ -184,7 +205,8 @@ class PaymentScreen2 extends StatelessWidget {
                       textStyleColor: ColorsAsset.hintColor,
                       fieldSize: 12,
                       labelText: "ادخل الكود",
-                      labelFontColor: ColorsAsset.hintColor),
+                      labelFontColor: ColorsAsset.hintColor
+                  ),
                   SizedBox(
                     height: 8,
                   ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sigmaty/Sigmaty/constants/font_asset.dart';
 import 'package:sigmaty/Sigmaty/presentation/widgets/student/home_teacher/widgets/teacher_subjects.dart';
-import 'package:sigmaty/Sigmaty/presentation/widgets/student/home_teacher/widgets/teachers_list.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../constants/colors_asset.dart';
@@ -69,7 +68,7 @@ class ParentTeachersItem extends StatelessWidget {
         SizedBox(
           height: ScreenSize.height(context) * 0.02,
         ),
-        const TeachersList()
+        // const TeachersList()
       ],
     );
   }

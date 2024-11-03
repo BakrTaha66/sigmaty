@@ -2,31 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:sigmaty/Sigmaty/constants/font_asset.dart';
 import 'package:sigmaty/Sigmaty/constants/screen_size.dart';
 
-class NotficationsWidget extends StatelessWidget {
-  const NotficationsWidget({super.key});
+class NotificationsWidget extends StatelessWidget {
+  const NotificationsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("الاشعارات", style: FontAsset.font20WeightSemiBold),
-        ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 20.0, left: 14.0, right: 14.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(
+                  height: 16,
+                ),
+                Text("الاشعارات", style: FontAsset.font20WeightSemiBold),
+                SizedBox(
+                  height: 16,
+                ),
                ListView.builder(
                  shrinkWrap: true,
                  physics: const NeverScrollableScrollPhysics(),
                  itemCount: 5,
+                   itemExtent: ScreenSize.height(context) * 0.55,
                    itemBuilder: (context,index){
-                 return Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: buildNotificationContainer(context),
-                 );
+                 return buildNotificationContainer(context);
                })
 
               ],
@@ -39,19 +40,26 @@ class NotficationsWidget extends StatelessWidget {
 
   Widget buildNotificationContainer(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 40.0),
+      padding: const EdgeInsets.only(bottom: 16.0),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 16),
-        width: ScreenSize.width(context) * 1,
-        height: ScreenSize.height(context) * 0.6,
+        padding: const EdgeInsets.all(16),
+        width: ScreenSize.width(context),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(24),
           border: Border.all(width: 0.5, color: Colors.grey),
         ),
         child: Column(
           children: [
             Row(
               children: [
+                const CircleAvatar(
+                  radius: 24,
+                  backgroundImage:
+                  AssetImage('assets/images/Rectangle 7.png'),
+                ),
+                SizedBox(
+                  width: 16,
+                ),
                 Column(
                   children: [
                     Text(
@@ -59,7 +67,7 @@ class NotficationsWidget extends StatelessWidget {
                       style: FontAsset.font16WeightSemiBold,
                     ),
                     SizedBox(
-                      height: ScreenSize.height(context) * 0.002,
+                      height: 4,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 80.0),
@@ -70,43 +78,46 @@ class NotficationsWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  width: ScreenSize.width(context) * 0.02,
-                ),
-                const CircleAvatar(
-                  backgroundImage:
-                  AssetImage('assets/images/Rectangle 7.png'),
-                ),
               ],
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(height: 8),
             Container(
               width: MediaQuery.of(context).size.width - 60,
               color: Colors.grey,
               height: 0.6,
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(height: 8),
             Row(
               children: [
-
-                Image.asset(
-                  "assets/images/Rectangle 6.png",
-                  width: ScreenSize.width(context) * 0.2,
+                Container(
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/images/Rectangle 6.png",),
+                          fit: BoxFit.fill)),
                 ),
-                SizedBox(width: ScreenSize.width(context) * 0.04),
+                SizedBox(
+                  width: 16,
+                ),
                 Text(
                   'final revisions',
                   style: FontAsset.font16WeightBold,
                 ),
               ],
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(
+              height: 8,
+            ),
             Container(
               width: MediaQuery.of(context).size.width - 60,
               color: Colors.grey,
               height: 0.6,
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(
+              height: 16,
+            ),
             Column(
               children: [
                 Row(
@@ -115,7 +126,7 @@ class NotficationsWidget extends StatelessWidget {
                     Row(
                       children: [
                         const Icon(Icons.video_library_outlined),
-                        SizedBox(width: ScreenSize.width(context) * 0.02),
+                        SizedBox(width: 8),
                         Text(
                           "فيديوهات",
                           style: FontAsset.font16WeightSemiBold,
@@ -132,20 +143,22 @@ class NotficationsWidget extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(
+              height: 16,
+            ),
             Container(
               width: MediaQuery.of(context).size.width - 60,
               color: Colors.grey,
               height: 0.6,
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     const Icon(Icons.menu_rounded),
-                    SizedBox(width: ScreenSize.width(context) * 0.02),
+                    SizedBox(width: 8),
                     Text(
                       "الاسئلة",
                       style: FontAsset.font16WeightSemiBold,
@@ -160,20 +173,20 @@ class NotficationsWidget extends StatelessWidget {
 
               ],
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(height: 16),
             Container(
               width: MediaQuery.of(context).size.width - 60,
               color: Colors.grey,
               height: 0.6,
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(height: 16),
             Center(
               child: Text(
                 "تمت اضافة شابتر جديد",
                 style: FontAsset.font16WeightMedium,
               ),
             ),
-            SizedBox(height: ScreenSize.height(context) * 0.02),
+            SizedBox(height: 16),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

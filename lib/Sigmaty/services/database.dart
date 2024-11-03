@@ -44,6 +44,18 @@ class DatabaseMethods {
       print('Error creating user document: $e');
     }
   }
+
+  // Future<void> teacherChapter(String userId, chapterMap) async {
+  //   try {
+  //
+  //     // Create a new document in the "users" collection with the given user ID
+  //     await fireStore.collection('teacher').doc(userId).collection('chapters').add(chapterMap);
+  //
+  //     print('User document created successfully');
+  //   } catch (e) {
+  //     print('Error creating user document: $e');
+  //   }
+  // }
   // Function to create a contact document in a user's subcollection
   // Future<void> createContact(String userId, String contactId, dynamic contactMap) async {
   //   try {

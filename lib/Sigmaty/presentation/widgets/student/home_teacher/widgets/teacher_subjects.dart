@@ -22,82 +22,54 @@ class TeacherSubjects extends StatelessWidget {
     return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-
         children: [
           Column(
             children: [
               Row(
-                mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                mainAxisAlignment:MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherChemical(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherMaths(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherArabic(),
-                  ),
+                  TeacherChemical(),
+                  SizedBox(width: 8,),
+                  TeacherMaths(),
+                  SizedBox(width: 8,),
+                  TeacherArabic(),
                 ],
               ),
+              SizedBox(height: 8,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherDNA(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherPhysics(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherEnglish(),
-                  ),
+                  TeacherDNA(),
+                  SizedBox(width: 8,),
+                  TeacherPhysics(),
+                  SizedBox(width: 8,),
+                  TeacherEnglish(),
                 ],
               ),
             ],
           ),
+          SizedBox(width: 8,),
           Column(
             children: [
               Row(
-
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherPhilosophy(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherHistory(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherFrance(),
-                  ),
+                  TeacherPhilosophy(),
+                  SizedBox(width: 8,),
+                  TeacherHistory(),
+                  SizedBox(width: 8,),
+                  TeacherFrance(),
                 ],
               ),
+              SizedBox(height: 8,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherAutism(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherItalic(),
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    child: TeacherSpain(),
-                  ),
+                  TeacherAutism(),
+                  SizedBox(width: 8,),
+                  TeacherItalic(),
+                  SizedBox(width: 8,),
+                  TeacherSpain(),
                 ],
               ),
             ],

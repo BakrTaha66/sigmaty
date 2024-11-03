@@ -9,7 +9,6 @@ class BuildNotificationTeacherContainer{
       child: Container(
         padding: const EdgeInsets.all(16),
         width: ScreenSize.width(context),
-        height: ScreenSize.height(context) * 0.55,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           border: Border.all(width: 0.5, color: Colors.grey),

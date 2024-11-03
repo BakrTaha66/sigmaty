@@ -15,11 +15,10 @@ class LessonsDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenSize.height(context) * 0.65,
       width: ScreenSize.width(context),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(24),
         border: Border.all(color: Colors.black.withOpacity(0.1)),
       ),
       child: Column(
@@ -27,10 +26,12 @@ class LessonsDetails extends StatelessWidget {
           Row(
             children: [
               CircleAvatar(
-                radius: ScreenSize.height(context) * 0.04,
+                radius: 24,
                 backgroundImage: const AssetImage(AssetsData.person),
               ),
-              SizedBox(width: ScreenSize.width(context) * 0.02),
+              SizedBox(
+                width: 16,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,13 +47,18 @@ class LessonsDetails extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: ScreenSize.height(context) * 0.02),
+          SizedBox(
+            height: 8,
+          ),
           const Divider(thickness: 1, color: Colors.grey),
+          SizedBox(
+            height: 8,
+          ),
           Row(
             children: [
               Container(
-                height: ScreenSize.height(context) * 0.1,
-                width: ScreenSize.width(context) * 0.2,
+                height: 80,
+                width: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: const DecorationImage(
@@ -61,7 +67,9 @@ class LessonsDetails extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: ScreenSize.width(context) * 0.02),
+              SizedBox(
+                width: 16,
+              ),
               Expanded(
                 child: Text(
                   'final revisions - session 1:\n rafsyuggs ',
@@ -72,11 +80,21 @@ class LessonsDetails extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: 8,
+          ),
           const Divider(thickness: 1, color: Colors.grey),
+          SizedBox(
+            height: 8,
+          ),
           const BeginAndEndTime(),
-          SizedBox(height: ScreenSize.height(context) * 0.02),
+          SizedBox(
+            height: 8,
+          ),
           const Divider(thickness: 1, color: Colors.grey),
-          SizedBox(height: ScreenSize.height(context) * 0.02),
+          SizedBox(
+            height: 8,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -84,7 +102,9 @@ class LessonsDetails extends StatelessWidget {
                 'تمت مشاهدة',
                 style: FontAsset.font14WeightSemiBold.copyWith(fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: ScreenSize.height(context) * 0.01),
+              SizedBox(
+                height: 4,
+              ),
               StepProgressIndicator(
                 totalSteps: 100,
                 currentStep: 32,
@@ -94,7 +114,9 @@ class LessonsDetails extends StatelessWidget {
                 unselectedColor: ColorsAsset.mainColor.withOpacity(0.2),
                 roundedEdges: const Radius.circular(10),
               ),
-              SizedBox(height: ScreenSize.height(context) * 0.01),
+              SizedBox(
+                height: 4,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -116,11 +138,13 @@ class LessonsDetails extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer(),
+          SizedBox(
+            height: 8,
+          ),
           CustomButtonWithoutIcon(
             title: 'فتح',
-            height: 0.06,
-            width: 1,
+            height: 40,
+            width: ScreenSize.width(context),
             onPressed: () {
               // التأكد من أن المسار "/HistoryScreen2" صحيح في GoRouter
               context.push("/HistoryScreen2");
